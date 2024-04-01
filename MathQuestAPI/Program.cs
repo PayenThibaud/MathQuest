@@ -1,17 +1,12 @@
+using MathQuestAPI.Data;
+using MathQuestAPI.Extentions;
 using MathQuestAPI.Repository;
 using MathQuestCore.Model;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<IRepository<Utilisateur>, UtilisateurRepository>();
-builder.Services.AddScoped<IRepository<Lecon>, LeconRepository>();
+builder.InjectDependancies();
 
 var app = builder.Build();
 
@@ -23,6 +18,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(option =>
+{
+    option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+});
 
 app.UseAuthorization();
 
