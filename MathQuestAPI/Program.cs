@@ -1,3 +1,6 @@
+using MathQuestAPI.Repository;
+using MathQuestCore.Model;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IRepository<Utilisateur>, UtilisateurRepository>();
+builder.Services.AddScoped<IRepository<Lecon>, LeconRepository>();
 
 var app = builder.Build();
 

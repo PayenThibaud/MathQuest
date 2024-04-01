@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathQuestCore.Model
 {
-    internal class Lecon
+    public class Lecon
     {
         public int LeconId { get; set; }
 

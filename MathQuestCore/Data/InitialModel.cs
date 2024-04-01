@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MathQuestCore.Data
 {
-    internal class InitialModel
+    public static class InitialModel
     {
         public static readonly List<Utilisateur> Utilisateurs = new List<Utilisateur>()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathQuestCore.Model
 {
-    internal class Utilisateur
+    public class Utilisateur
     {
         public int UtilisateurId { get; set; }
 
