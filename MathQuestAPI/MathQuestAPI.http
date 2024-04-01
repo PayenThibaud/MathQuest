@@ -1,0 +1,6 @@
+@MathQuestAPI_HostAddress = http://localhost:5068
+
+GET {{MathQuestAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
